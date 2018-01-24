@@ -15,11 +15,11 @@ This app requires the use a Firebase api key to access Firebase database feature
 * Create a file called `api-keys.ts` in the `src/app/` directory and add the following code with your API key information in place of the 'xxx's:
 ```
 export var masterFirebaseConfig = {
-  apiKey: "xxxx",
-  authDomain: "xxxx.firebaseapp.com",
-  databaseUrl: "https://xxx.firebaseio.com",
-  storageBucket: "xxxx.appspot.com",
-  messageingSenderId: "xxxx"
+  apiKey: "xxxxx-xxxxxx",
+  authDomain: "xxxxx.firebaseapp.com",
+  databaseUrl: "https://xxxxx.firebaseio.com",
+  storageBucket: "xxxxx.appspot.com",
+  messageingSenderId: "xxxxx"
 };
 ```
 

@@ -14,7 +14,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 
 export class MarketplaceComponent implements OnInit {
 
-  albums: FirebaseListObservable<any[]>; // albums property is defined here, waiting to receive data from AlbumService. 
+  albums: FirebaseListObservable<any[]>; // albums property is defined here, waiting to receive data from AlbumService.
 
   constructor(private router: Router, private albumService: AlbumService) { } // needs an instance of both router and service
 
@@ -23,6 +23,6 @@ export class MarketplaceComponent implements OnInit {
   }
 
   goToDetailPage(clickedAlbum: Album){ // gets clickedAlbum from click event on view
-    this.router.navigate(['albums', clickedAlbum.id]);
+    this.router.navigate(['albums', clickedAlbum.$key]);
   }
 }
