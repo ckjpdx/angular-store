@@ -3,12 +3,12 @@
 // A service that imports that data, and contains a getAlbums() method to return it.
 // A component that has both registered the service as a provider, and has an instance available to it (because it was included in the constructor())
 
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'; // this is required because this is a service file
 import { Album } from './album.model';
 // import { ALBUMS } from './mock-albums'; // hardcoded albums no longer used
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
-@Injectable()
+@Injectable() // this is required because this is a service file
 export class AlbumService {
   albums: FirebaseListObservable<any[]>;
 

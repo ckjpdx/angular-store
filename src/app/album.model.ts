@@ -1,7 +1,7 @@
 export class Album {
-  constructor (
+  constructor ( // does not need key property - that comes from Firebase
     public title: string,
     public artist: string,
-    public description: string,
+    public description: string
   ) {}
 }
