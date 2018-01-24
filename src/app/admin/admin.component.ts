@@ -13,7 +13,7 @@ export class AdminComponent implements OnInit {
 
   constructor(private albumService: AlbumService) { }
 
-  submitForm(title: string, artist: string, description: string) {
+  submitForm(title: string, artist: string, description: string) { // click event submitForm
     var newAlbum: Album = new Album(title, artist, description); // does not need key - that comes from Firebase
     this.albumService.addAlbum(newAlbum);
   }

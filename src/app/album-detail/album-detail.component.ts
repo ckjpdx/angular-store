@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router'; // contains informatio
 import { Location } from '@angular/common'; // normalizes address bar
 import { Album } from '../album.model'; // needed
 import { AlbumService } from '../album.service';
-import { FirebaseObjectObservable } from 'angularfire2/database';
+// import { FirebaseObjectObservable } from 'angularfire2/database'; // maybe don't need this? works fine without.
 
 
 @Component({
@@ -26,7 +26,7 @@ export class AlbumDetailComponent implements OnInit {
     this.route.params.forEach((urlParameters) => { // this must be forEach for this to work because of magic
       this.albumId = urlParameters['id'];
     });
-    this.albumToDisplay = this.albumService.getAlbumById(this.albumId);
+    this.albumToDisplay = this.albumService.getAlbumById(this.albumId); // displays an album by looking into albumService's method getAlbumById and passes AlbumDetailComponent's albumId property as an argument.
   }
 
 }

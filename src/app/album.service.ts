@@ -24,6 +24,14 @@ export class AlbumService {
   this.albums.push(newAlbum);
   }
 
+  // this locates and updates the Album's Firebase entry.
+  updateAlbum(localUpdatedAlbum){
+    let albumEntryInFirebase = this.getAlbumById(localUpdatedAlbum.$key);
+    albumEntryInFirebase.update({title: localUpdatedAlbum.title,
+                                artist: localUpdatedAlbum.artist,
+                                description: localUpdatedAlbum.description});
+  }
+
   // Notice albumId is now a string, not a number. Firebase keys are strings.
   // Additionally, we're now calling this.database.object() instead of .list(). This is because we're requesting only a single object from Firebase, not an entire list.
   // We're also including albumId as an argument to the object() method. This is because we need to tell Firebase where to look for our object. Remember, each database entry is located under its key. All entries are also nested in a larger albums table. Therefore we specify "albums/" as the location. This prompts Firebase to look in our Albums list, for the Album residing under whatever key we provide this method.

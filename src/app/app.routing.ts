@@ -21,7 +21,7 @@ const appRoutes: Routes = [
     component: MarketplaceComponent
   },
   {
-    path: 'albums/:id', // 1. album gets passed via click event which passes that single album from an ngFor list. 2. album is passed to the MarketplaceComponent.ts file and sent into this.router.navigate which is imported from angular core (there is an instance of the router in the MarketplaceComponent)
+    path: 'albums/:id', // 1. 'album' gets passed via click event which passes a single album from an ngFor list. 2. album is passed to the MarketplaceComponent.ts file and sent into 'this.router.navigate' which is imported from angular core (there is an instance of the router in the MarketplaceComponent)
     component: AlbumDetailComponent // this component receives album
   },
   {
