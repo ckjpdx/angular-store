@@ -22,7 +22,7 @@ export class MarketplaceComponent implements OnInit {
     this.albums = this.albumService.getAlbums(); // as soon as MarketplaceComponent loads it gets all the albums automatically
   }
 
-  goToDetailPage(clickedAlbum: Album){ // gets clickedAlbum from click event on view
+  goToDetailPage(clickedAlbum){ // gets clickedAlbum from click event on view (cannot be type checked, tyoe is special from Firebase)
     this.router.navigate(['albums', clickedAlbum.$key]);
   }
 }
