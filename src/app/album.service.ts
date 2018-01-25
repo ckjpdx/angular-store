@@ -31,6 +31,11 @@ export class AlbumService {
                                 artist: localUpdatedAlbum.artist,
                                 description: localUpdatedAlbum.description});
   }
+  
+  deleteAlbum(localAlbumToDelete){
+   var albumEntryInFirebase = this.getAlbumById(localAlbumToDelete.$key);
+   albumEntryInFirebase.remove();
+ }
 
   // Notice albumId is now a string, not a number. Firebase keys are strings.
   // Additionally, we're now calling this.database.object() instead of .list(). This is because we're requesting only a single object from Firebase, not an entire list.

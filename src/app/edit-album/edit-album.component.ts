@@ -12,12 +12,18 @@ export class EditAlbumComponent implements OnInit {
   @Input() selectedAlbum;
 
   constructor(private albumService: AlbumService) { }
-  
+
   // triggered when the "Update" button registers a click event. It calls the AlbumService's updateAlbum() method, passing in the locally-updated Album.
   beginUpdatingAlbum(albumToUpdate){
     this.albumService.updateAlbum(albumToUpdate);
   }
 
+  beginDeletingAlbum(albumToDelete){
+     if(confirm("Are you sure you want to delete this item from the inventory?")){
+       this.albumService.deleteAlbum(albumToDelete);
+     }
+   }
+   
   ngOnInit() {
   }
 
