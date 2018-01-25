@@ -6,6 +6,7 @@
 import { Injectable } from '@angular/core'; // this is required because this is a service file
 import { Album } from './album.model';
 // import { ALBUMS } from './mock-albums'; // hardcoded albums no longer used
+// npm install angularfire2@4.0.0-rc.0 firebase@^3.6.6 --save
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable() // this is required because this is a service file
@@ -31,7 +32,7 @@ export class AlbumService {
                                 artist: localUpdatedAlbum.artist,
                                 description: localUpdatedAlbum.description});
   }
-  
+
   deleteAlbum(localAlbumToDelete){
    var albumEntryInFirebase = this.getAlbumById(localAlbumToDelete.$key);
    albumEntryInFirebase.remove();
